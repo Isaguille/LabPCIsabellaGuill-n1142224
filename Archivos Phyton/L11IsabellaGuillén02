@@ -1,0 +1,69 @@
+print("Semana No. 11: Ejercicio 1")
+n = int(input("Ingrese un número mayor a cero"))
+
+if(n <= 0):
+    print("Error, debe ser mayor a cero")
+
+#definición de variables para Fibonacci
+a = 0
+b = 1
+c = 0
+
+i = 2
+resultado = ""
+
+if (n>0):
+    resultado = str(a)
+
+    if(n>1):
+        resultado = resultado + ", " + str(b)
+
+    #Ciclo, se repite hasta que se deje de cumplir la condición
+    while (i < n):
+        c = a + b
+        resultado = resultado + ", " + str(c)
+        a = b
+        b = c
+        i = i + 1
+
+    print(resultado)
+else: 
+    print(resultado)
+
+print("Semana No. 11: Ejercicio 2")
+n2 = int(input("Ingrese un número mayor a cero"))
+
+if(n2 <= 0):
+    print("Error, debe ser mayor a cero")
+
+#Ejercicio A
+calculoA = 0
+for xA in range(1, n2 + 1):
+    calculoA += 1 / xA
+print("El resultado de A es: ", calculoA)
+
+
+# Método para calcular la suma de la serie 1/2^i
+print("Semana No. 11: Ejercicio 2 parte b")
+def calcular_suma_serie(N):
+    suma = 0
+    for i in range(1, N + 1):
+        suma += 1 / (2 ** i)
+    return suma
+
+# Función principal
+def main():
+    # Solicitar al usuario que ingrese un número entero mayor a 0
+    N = int(input("Introduce un número entero mayor a 0: "))
+    
+    # Validar que el número sea mayor a 0
+    while N <= 0:
+        N = int(input("El número debe ser mayor a 0. Por favor, intenta de nuevo: "))
+    
+    # Calcular y mostrar la suma de la serie
+    resultado = calcular_suma_serie(N)
+    print(f"La suma de la serie es: {resultado}")
+
+# Ejecutar el programa
+if __name__ == "__main__":
+    main()

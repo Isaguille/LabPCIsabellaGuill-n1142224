@@ -1,0 +1,28 @@
+# Menú 
+
+def mostrar_menu():
+    print("Menú del día:")
+    print("1. Desayuno: Huevos revueltos simples con salsa roja, salchichas, hash brown y panqueques con miel de maple. Agua pura. Valor de Q45.00.")
+    print("2. Almuerzo: Costillas de res con BBQ ahumado, arroz y ensalada. Agua pura. Valor de Q40.00.")
+    print("3. Cena: Panqueques con miel de maple y frutos rojos y un licuado de fresas. Valor de Q30.00.")
+    print("Por favor, elija una opción para continuar.")
+
+def tomar_pedido():
+    mostrar_menu()
+    eleccion = input("¿Qué desea pedir el día de hoy? ")
+    opciones = {
+        '1': {'descripcion': 'Desayuno', 'precio': 45.00},
+        '2': {'descripcion': 'Almuerzo', 'precio': 40.00},
+        '3': {'descripcion': 'Cena', 'precio': 30.00}
+    }
+    
+    if eleccion in opciones:
+        veces = int(input(f"¿Cuántas veces desea pedir la opción {eleccion}? "))
+        total = opciones[eleccion]['precio'] * veces
+        print(f"Usted ha pedido {veces} vez/veces la opción de {opciones[eleccion]['descripcion']} con un valor total de Q{total:.2f}.")
+    else:
+        print("Opción no válida. Por favor, elija una opción válida del menú.")
+
+# Ejecutar el programa
+if __name__ == '__main__':
+    tomar_pedido()

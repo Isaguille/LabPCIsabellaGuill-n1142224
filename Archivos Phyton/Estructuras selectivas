@@ -1,0 +1,101 @@
+print("Semana No. 10: Ejercicio 1")
+mesEntrada = int(input("Ingrese un número del 1-12"))
+
+match mesEntrada:
+    case 1: 
+        mesSalida = "Enero"
+    case 2: 
+        mesSalida ="Febrero" 
+    case 3:
+        mesSalida = "Marzo"
+    case 4: 
+        mesSalida = "Abril"
+    case 5: 
+        mesSalida = "Mayo"
+    case 6: 
+        mesSalida = "Junio"
+    case 7:
+        mesSalida = "Julio"
+    case 8: 
+        mesSalida = "Agosto"
+    case 9:
+        mesSalida = "Septiembre"
+    case 10:
+        mesSalida = "Octubre"
+    case 11:
+        mesSalida = "Noviembre"
+    case 12:
+        mesSalida = "Diciembre"
+    case _:
+        print("Error: El número a ingresar debe estar contenido entre 1-12")
+
+print("MES:", mesSalida)
+print(f"MES: {mesSalida}")
+
+#Ejercicio 2:
+print("Semana No. 10: Ejercicio 2")
+a= int(input("Ingrese un primer número mayor a 0"))
+b = int(input("Ingrese un segundo número mayor a 0"))
+c = int(input("Ingrese un tercer número mayor a 0"))
+
+if(a<=0 or b<=0 or c<=0):
+    print("Error, el número debe ser mayor a cero")
+
+if(a>b):
+    if(a>c):
+        print("El número A es mayor a B y a C")
+    else:
+        if(a == c):
+            print("A es mayor a B y A es igual a C")
+        else:
+            print("A es mayor a B y A es diferente a C")
+
+else:
+    if(a == b):
+        if(a > c):
+            print("A es igual B, A y B son mayores a C ")
+        else:
+            if(a == c): 
+                print("A es igual a B y A es igual a C")
+            else:
+                print("A es igual a B y A es menor a C")
+    else:
+        if(b>c):
+            print("A es menor que B y B es mayor que C")
+        else: 
+            if(b==c):
+                print("A es menor que B y B es igual a C")
+            
+
+#Actividad 03     
+# Programa para determinar el signo zodiacal basado en la fecha de nacimiento
+
+def obtener_signo_zodiacal(dia, mes):
+    signos = [
+        (20, 1, "Capricornio"), (19, 2, "Acuario"), (20, 3, "Piscis"),
+        (19, 4, "Aries"), (20, 5, "Tauro"), (20, 6, "Géminis"),
+        (22, 7, "Cáncer"), (22, 8, "Leo"), (22, 9, "Virgo"),
+        (22, 10, "Libra"), (21, 11, "Escorpio"), (21, 12, "Sagitario"),
+        (19, 1, "Capricornio")
+    ]
+
+    for fecha_limite, mes_limite, signo in signos:
+        if (mes == mes_limite and dia <= fecha_limite) or (mes == mes_limite - 1 and dia > fecha_limite):
+            return signo
+    return "Capricornio"  # Para fechas del 22 de diciembre al 19 de enero
+
+# Función principal
+def main():
+    # Solicitar la fecha de nacimiento
+    dia = int(input("Introduce el día de tu nacimiento: "))
+    mes = int(input("Introduce el mes de tu nacimiento (en número): "))
+    
+    # Obtener el signo zodiacal
+    signo = obtener_signo_zodiacal(dia, mes)
+    
+    # Mostrar el signo zodiacal
+    print(f"Tu signo zodiacal es: {signo}")
+
+# Ejecutar el programa
+if __name__ == "__main__":
+    main()

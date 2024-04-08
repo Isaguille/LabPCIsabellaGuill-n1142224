@@ -1,0 +1,43 @@
+# Definición del menú
+menu = {
+    1: {
+        'descripcion': 'Desayuno: Huevos revueltos simples con salsa roja, salchichas, hash brown y panqueques con miel de maple. Agua pura.',
+        'precio': 45.00
+    },
+    2: {
+        'descripcion': 'Almuerzo: Costillas de res con BBQ ahumado, arroz y ensalada. Agua pura.',
+        'precio': 40.00
+    },
+    3: {
+        'descripcion': 'Cena: Panqueques con miel de maple y frutos rojos. Licuado de fresas.',
+        'precio': 30.00
+    }
+}
+
+# Función para mostrar el menú y tomar la orden
+def tomar_orden():
+    total_a_pagar = 0
+    while True:
+        print("Menú del día")
+        print("¿Qué desea pedir el día de hoy?")
+        print("1. Desayuno: Huevos revueltos simples con salsa roja, salchichas, hash brown y panqueques con miel de maple. Agua pura. (Q45.00)")
+        print("2. Almuerzo: Costillas de res con BBQ ahumado, arroz y ensalada. Agua pura. (Q40.00)")
+        print("3. Cena: Panqueques con miel de maple y frutos rojos. Licuado de fresas. (Q30.00)")
+        print("4. Finalizar pedido")
+        opcion = int(input("Seleccione una opción (1-4): "))
+        
+        if opcion == 4:
+            break
+        elif opcion in menu:
+            cantidad = int(input(f"¿Cuántas veces desea pedir la opción {opcion}? "))
+            total_a_pagar += menu[opcion]['precio'] * cantidad
+            print(f"Ha seleccionado: {menu[opcion]['descripcion']}")
+            print(f"Subtotal a pagar por esta opción: Q{menu[opcion]['precio'] * cantidad:.2f}")
+        else:
+            print("Opción no válida, por favor intente de nuevo.")
+    
+    print(f"El total a pagar por su pedido es: Q{total_a_pagar:.2f}")
+
+# Ejecutar el programa
+if __name__ == '__main__':
+    tomar_orden()

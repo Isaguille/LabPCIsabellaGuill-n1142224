@@ -1,0 +1,5 @@
+palabras = ['HOLA', 'Hola', 'ola']
+#              0      1       2
+palabras.pop(1)
+palabras.append[1]= 'hola otra vez'
+print(palabras)
