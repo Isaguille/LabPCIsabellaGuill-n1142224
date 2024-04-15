@@ -1,5 +1,4 @@
 # Programa para realizar un pedido de licuado personalizado
-
 def calcular_precio(base, azucar, leche, agrandar):
     precio = base
     precio += azucar * 0.50  # Costo adicional por azúcar
@@ -15,7 +14,9 @@ def main():
     nombre = input("Introduce tu nombre: ")
     NIT = input("Introduce tu NIT: ")
     print(f"Hola {nombre} - {NIT}, bienvenido al sistema de pedidos de licuados.")
-    
+   
+    print("MENU STRAWBERRY SHAKE´S", "a. CANTIDAD DE AZÚCAR", "- Una cucharada-------Q 0.50", "- Dos cucharadas------Q 1.00 ", "b. TIPO DE LECHE", "- Con agua, sin leche----------------descuento Q 2.00", "- Leche entera/deslactosada----------No afecta precio", "- Soya-----------------------------------------Q 3.00", "c. TAMAÑO", "- Agrandado deL licuado-----Aumenta 5% de su precio", sep="\n")
+   
     # Detalles del pedido por defecto
     base = 20.00
     azucar = int(input("¿Cuántas cucharadas de azúcar deseas agregar (0-2)? "))
@@ -28,8 +29,8 @@ def main():
         print("Opción no válida. Por favor, elige entre agua, deslactosada, entera o soya.")
         leche = input("Elige el tipo de leche: ")
     
-    agrandar_respuesta = input("¿Deseas agrandar tu licuado (sí/no)? ")
-    agrandar = agrandar_respuesta.lower() == 'sí'
+    agrandar_respuesta = input("¿Deseas agrandar tu licuado (si/no)? ")
+    agrandar = agrandar_respuesta.lower() == 'si'
     
     # Calcular el precio
     precio_final = calcular_precio(base, azucar, leche, agrandar)
@@ -38,11 +39,11 @@ def main():
     print("\nDetalles de tu pedido:")
     print(f"Azúcar: {azucar} cucharada(s)")
     print(f"Tipo de leche: {leche}")
-    print(f"Agrandado: {'Sí' if agrandar else 'No'}")
+    print(f"Agrandado: {'Si' if agrandar else 'No'}")
     print(f"Precio total: Q{precio_final:.2f}")
     
-    confirmar = input("¿Es correcta esta información? (sí/no): ")
-    if confirmar.lower() != 'sí':
+    confirmar = input("¿Es correcta esta información? (si/no): ")
+    if confirmar.lower() != 'si':
         print("Por favor, inicia de nuevo el proceso de pedido.")
         main()  # Reiniciar el proceso de pedido
     else:
